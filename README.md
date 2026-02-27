@@ -2,7 +2,7 @@
 
 ¡Hola! Soy el desarrollador de esta solución. He diseñado este proyecto como respuesta a la prueba técnica para la vacante de **Frontend Developer**, enfocado en cumplir con los requerimientos indicados utilizando buenas practicas y codigo de alta calidad.
 
-## 🚀 Decisiones Técnicas y Arquitectura
+## Decisiones Técnicas y Arquitectura
 
 Para este desarrollo, mi prioridad fue crear una base de código limpia y moderna. Estas son las razones detrás de mis elecciones:
 
@@ -11,7 +11,7 @@ Para este desarrollo, mi prioridad fue crear una base de código limpia y modern
 - **Mocking con Interceptores**: Para cumplir con el requerimiento de la API simulada, implementé un `HttpInterceptor`. Este intercepta las peticiones salientes y devuelve respuestas basadas en un objeto de datos simulado (`db.mocks.ts`), lo que permite que la aplicación sea totalmente funcional sin necesidad de un backend externo real durante la revisión.
 - **Formularios Reactivos**: Utilicé `ReactiveFormsModule` para gestionar las validaciones obligatorias de hoteles, habitaciones y huéspedes, asegurando que los datos cumplan con los criterios antes de ser procesados.
 
-## 📈 Enfoque en Escalabilidad
+## Enfoque en Escalabilidad
 
 Pensando en un entorno empresarial real, la aplicación está preparada para crecer:
 
@@ -19,7 +19,7 @@ Pensando en un entorno empresarial real, la aplicación está preparada para cre
 - **Persistencia en LocalStorage**: Incluí una capa de persistencia básica en los mocks que utiliza `localStorage`. Esto permite que los cambios realizados (como crear un nuevo hotel) persistan incluso si se refresca el navegador, simulando el comportamiento de una base de datos real.
 - **Componentes Standalone**: Al usar componentes independientes, se facilita la reutilización y el testeo unitario, además de reducir la complejidad de la configuración de módulos.
 
-## 🛠️ Instrucciones de Ejecución
+## Instrucciones de Ejecución
 
 Para ejecutar el proyecto localmente, se debe de tener instalado [Node.js](https://nodejs.org/) y la [Angular CLI](https://angular.io/cli).
 
@@ -38,9 +38,10 @@ Para ejecutar el proyecto localmente, se debe de tener instalado [Node.js](https
     ```
     Navega a `http://localhost:4200/` para ver la aplicación.
 
-## ☁️ Despliegue y Pruebas
+## Despliegue y Pruebas
 
 Si deseas probar la aplicación desplegada, puedes acceder a través del siguiente enlace:
+**https://jjbc04.github.io/hotel-management/**
 
 ---
 

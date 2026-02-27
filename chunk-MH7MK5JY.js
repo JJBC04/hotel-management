@@ -1,0 +1,1 @@
+import{Ub as s,bb as a,wb as n,xb as o}from"./chunk-62EMJ3WG.js";import"./chunk-2NFLSA4Y.js";var c=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=a({type:t,selectors:[["app-search"]],decls:2,vars:0,template:function(e,i){e&1&&(n(0,"p"),s(1,"search works!"),o())},encapsulation:2})};export{c as Search};

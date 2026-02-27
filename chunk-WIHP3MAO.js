@@ -1,0 +1,1 @@
+import{Ub as a,bb as t,wb as o,xb as m}from"./chunk-62EMJ3WG.js";import"./chunk-2NFLSA4Y.js";var s=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=t({type:n,selectors:[["app-room-management"]],decls:2,vars:0,template:function(e,r){e&1&&(o(0,"p"),a(1,"room-management works!"),m())},encapsulation:2})};export{s as RoomManagement};

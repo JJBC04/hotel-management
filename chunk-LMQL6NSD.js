@@ -1,0 +1,1 @@
+import{Ub as s,bb as t,wb as r,xb as n}from"./chunk-62EMJ3WG.js";import"./chunk-2NFLSA4Y.js";var a=class o{static \u0275fac=function(e){return new(e||o)};static \u0275cmp=t({type:o,selectors:[["app-reservation-form"]],decls:2,vars:0,template:function(e,m){e&1&&(r(0,"p"),s(1,"reservation-form works!"),n())},encapsulation:2})};export{a as ReservationForm};

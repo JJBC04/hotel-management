@@ -1,0 +1,1 @@
+import{Ub as s,bb as o,wb as i,xb as n}from"./chunk-62EMJ3WG.js";import"./chunk-2NFLSA4Y.js";var a=class e{static \u0275fac=function(t){return new(t||e)};static \u0275cmp=o({type:e,selectors:[["app-booking-list"]],decls:2,vars:0,template:function(t,l){t&1&&(i(0,"p"),s(1,"booking-list works!"),n())},encapsulation:2})};export{a as BookingList};

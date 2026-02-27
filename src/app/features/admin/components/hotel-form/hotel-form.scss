@@ -1,0 +1,98 @@
+// src/app/features/admin/components/hotel-form/hotel-form.scss
+
+.form-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); // Elevación suave
+  animation: fadeIn 0.5s ease-out;
+
+  .form-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 1rem;
+
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #333;
+    }
+
+    button {
+      color: #666;
+    }
+  }
+
+  .hotel-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    // Ajuste para que los campos de Material ocupen todo el ancho
+    mat-form-field {
+      width: 100%;
+    }
+
+    .toggle-container {
+      padding: 0.5rem 0;
+      border-radius: 8px;
+
+      mat-slide-toggle {
+        font-weight: 500;
+        color: #555;
+      }
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #f0f0f0;
+
+      button {
+        min-width: 120px;
+        padding: 0.5rem 1.5rem;
+        border-radius: 6px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+}
+
+// Animación de entrada para mejor UX
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsividad para móviles
+@media (max-width: 640px) {
+  .form-container {
+    margin: 1rem;
+    padding: 1.5rem;
+
+    .form-actions {
+      flex-direction: column;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

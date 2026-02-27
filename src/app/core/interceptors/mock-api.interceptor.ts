@@ -20,7 +20,7 @@ export const mockApiInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>,
     return of(new HttpResponse({ status: 201, body: newHotel }));
   }
 
-  // Simulación de PATCH (Habilitar/Deshabilitar) [cite: 21]
+  // Simulación de PATCH (Habilitar/Deshabilitar)
   if (url.includes('/api/hoteles/') && method === 'PATCH') {
     const id = parseInt(url.split('/').pop() || '0');
     mockHotels = mockHotels.map(h => h.id === id ? { ...h, ...body as any } : h);

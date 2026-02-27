@@ -1,59 +1,52 @@
-# HotelManagement
+# Hotel Management System - Prueba Técnica UltraGroup
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
+¡Hola! Soy el desarrollador de esta solución. He diseñado este proyecto como respuesta a la prueba técnica para la vacante de **Frontend Developer**, enfocado en cumplir con los requerimientos indicados utilizando buenas practicas y codigo de alta calidad.
 
-## Development server
+## 🚀 Decisiones Técnicas y Arquitectura
 
-To start a local development server, run:
+Para este desarrollo, mi prioridad fue crear una base de código limpia y moderna. Estas son las razones detrás de mis elecciones:
 
-```bash
-ng serve
-```
+- **Angular + Signals**: Utilice versión más reciente de Angular (21), aprovechando los **Signals** para la gestión del estado. Eleji este enfoque para que la aplicación sea mas atomica y escalable, tambien para evitar hacer renderizados innecesarios.
+- **Arquitectura Modular**: Organicé el proyecto siguiendo una separación clara de responsabilidades en carpetas de `core` (servicios y lógica global), `features` (módulos de negocio como Admin y Booking) y `shared` (componentes reutilizables).
+- **Mocking con Interceptores**: Para cumplir con el requerimiento de la API simulada, implementé un `HttpInterceptor`. Este intercepta las peticiones salientes y devuelve respuestas basadas en un objeto de datos simulado (`db.mocks.ts`), lo que permite que la aplicación sea totalmente funcional sin necesidad de un backend externo real durante la revisión.
+- **Formularios Reactivos**: Utilicé `ReactiveFormsModule` para gestionar las validaciones obligatorias de hoteles, habitaciones y huéspedes, asegurando que los datos cumplan con los criterios antes de ser procesados.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 📈 Enfoque en Escalabilidad
 
-## Code scaffolding
+Pensando en un entorno empresarial real, la aplicación está preparada para crecer:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Lazy Loading**: Las rutas principales de Administración y Reservas se cargan de forma que solo se llaman los componentes cuando sea necesario. Esto optimiza el tiempo de carga al utilizar solo el código necesario para la sección que el usuario está visitando.
+- **Persistencia en LocalStorage**: Incluí una capa de persistencia básica en los mocks que utiliza `localStorage`. Esto permite que los cambios realizados (como crear un nuevo hotel) persistan incluso si se refresca el navegador, simulando el comportamiento de una base de datos real.
+- **Componentes Standalone**: Al usar componentes independientes, se facilita la reutilización y el testeo unitario, además de reducir la complejidad de la configuración de módulos.
 
-```bash
-ng generate component component-name
-```
+## 🛠️ Instrucciones de Ejecución
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Para ejecutar el proyecto localmente, se debe de tener instalado [Node.js](https://nodejs.org/) y la [Angular CLI](https://angular.io/cli).
 
-```bash
-ng generate --help
-```
+1.  **Clonar el repositorio**:
+    ```bash
+    git clone [https://github.com/JJBC04/hotel-management]
+    cd hotel-management
+    ```
+2.  **Instalar las dependencias**:
+    ```bash
+    npm install
+    ```
+3.  **Iniciar el servidor de desarrollo**:
+    ```bash
+    ng serve
+    ```
+    Navega a `http://localhost:4200/` para ver la aplicación.
 
-## Building
+## ☁️ Despliegue y Pruebas
 
-To build the project run:
+Si deseas probar la aplicación desplegada, puedes acceder a través del siguiente enlace:
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- **Perfil Agencia**: Accede para gestionar el catálogo de hoteles y habitaciones.
+- **Perfil Viajero**: Realiza búsquedas por ciudad y completa el flujo de reserva con datos de huéspedes.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+_Desarrollado con ❤️ para el proceso de selección de UltraGroup._

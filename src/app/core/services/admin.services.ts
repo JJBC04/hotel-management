@@ -8,9 +8,9 @@ import { Hotel, Habitacion, Reserva } from '../../shared/interfaces/model';
 })
 export class AdminService {
   private http = inject(HttpClient);
-  private apiUrl = '/api'; // URL base ficticia interceptada
+  private apiUrl = '/api'; // URL base para el mock API
 
-  // --- Gestión de Hoteles ---
+  // Gestión de Hoteles
   getHoteles(): Observable<Hotel[]> {
     return this.http.get<Hotel[]>(`${this.apiUrl}/hoteles`);
   }
@@ -23,7 +23,7 @@ export class AdminService {
     return this.http.patch(`${this.apiUrl}/hoteles/${id}`, { estaHabilitado });
   }
 
-  // --- Gestión de Habitaciones --- [cite: 23]
+  //Gestión de Habitaciones
   getHabitaciones(hotelId: number): Observable<Habitacion[]> {
     return this.http.get<Habitacion[]>(`${this.apiUrl}/habitaciones?hotelId=${hotelId}`);
   }
@@ -32,7 +32,7 @@ export class AdminService {
     return this.http.post<Habitacion>(`${this.apiUrl}/habitaciones`, habitacion);
   }
 
-  // --- Gestión de Reservas ---
+  //Gestión de Reservas
   getReservasPorHotel(hotelId: number): Observable<Reserva[]> {
     return this.http.get<Reserva[]>(`${this.apiUrl}/reservas?hotelId=${hotelId}`);
   }

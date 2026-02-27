@@ -1,16 +1,16 @@
 import { Hotel, Habitacion, Reserva } from '../../shared/interfaces/model';
 const DATA_KEY = 'ultra_group_db';
 
-// Datos de ejemplo para el modelo de Hotel [cite: 21]
+// Datos de ejemplo para el modelo de Hotel
 export const MOCK_HOTEL: Hotel = {
   id: 1,
   nombre: 'Gran Oasis Resort',
   ubicacion: 'Cartagena, Colombia',
   estaHabilitado: true,
-  habitaciones: [] // Se llena con la relación de habitaciones
+  habitaciones: []
 };
 
-// Datos de ejemplo para el modelo de Habitación [cite: 23]
+// Datos de ejemplo para el modelo de Habitación
 export const MOCK_HABITACION: Habitacion = {
   id: 101,
   hotelId: 1,
@@ -21,7 +21,7 @@ export const MOCK_HABITACION: Habitacion = {
   estaHabilitada: true
 };
 
-// Datos de ejemplo para el modelo de Reserva y Huésped [cite: 32, 34]
+// Datos de ejemplo para el modelo de Reserva y Huésped
 export const MOCK_RESERVA: Reserva = {
   id: 5001,
   hotelId: 1,
@@ -41,7 +41,7 @@ export const MOCK_RESERVA: Reserva = {
   ]
 };
 
-// Función para persistir cambios cada vez que hagas un POST/PUT/DELETE
+// Función para persistir cambios cada vez que se haga un POST/PUT/DELETE
 export const saveToLocalStorage = (data: any) => {
   localStorage.setItem(DATA_KEY, JSON.stringify(data));
 };

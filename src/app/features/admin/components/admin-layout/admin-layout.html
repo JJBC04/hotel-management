@@ -1,1 +1,20 @@
-<p>admin-layout works!</p>
+<div class="admin-dashboard">
+  <header class="dashboard-header">
+    <h1>Panel de Administración Agencia</h1>
+  </header>
+
+  <nav mat-tab-nav-bar [tabPanel]="tabPanel" color="primary">
+    @for (link of navLinks; track link.label) {
+    <a mat-tab-link [routerLink]="link.link" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+      <mat-icon class="tab-icon">{{ link.icon }}</mat-icon>
+      {{ link.label }}
+    </a>
+    }
+  </nav>
+
+  <mat-tab-nav-panel #tabPanel>
+    <div class="content-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-tab-nav-panel>
+</div>

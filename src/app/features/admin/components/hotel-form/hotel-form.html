@@ -1,1 +1,41 @@
-<p>hotel-form works!</p>
+<div class="form-container">
+  <header class="form-header">
+    <button mat-icon-button routerLink="/admin/hoteles">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <h2>{{ isEditMode() ? 'Editar' : 'Registrar' }} Hotel</h2>
+  </header>
+
+  <form [formGroup]="hotelForm" (ngSubmit)="onSubmit()" class="hotel-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre del Hotel</mat-label>
+      <input matInput formControlName="nombre" placeholder="Ej. Gran Oasis Resort">
+      @if (hotelForm.get('nombre')?.hasError('required')) {
+      <mat-error>El nombre es obligatorio</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Ubicación</mat-label>
+      <input matInput formControlName="ubicacion" placeholder="Ciudad, País">
+      @if (hotelForm.get('ubicacion')?.hasError('required')) {
+      <mat-error>La ubicación es obligatoria</mat-error>
+      }
+    </mat-form-field>
+
+    <div class="toggle-container">
+      <mat-slide-toggle formControlName="estaHabilitado" color="primary">
+        Hotel Habilitado
+      </mat-slide-toggle>
+    </div>
+
+    <div class="form-actions">
+      <button mat-stroked-button type="button" routerLink="/admin/hoteles" [disabled]="loading()">
+        Cancelar
+      </button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="hotelForm.invalid || loading()">
+        {{ loading() ? 'Procesando...' : (isEditMode() ? 'Guardar Cambios' : 'Crear Hotel') }}
+      </button>
+    </div>
+  </form>
+</div>

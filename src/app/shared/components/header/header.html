@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="header-container">
+  <span>{{ appTitle }}</span>
+
+  <span class="spacer"></span>
+  <div class="profile-info">
+    <span class="profile-label">Perfil: <strong>{{ currentProfile }}</strong></span>
+    <button mat-raised-button color="accent" [matMenuTriggerFor]="profileMenu">
+      <mat-icon>account_circle</mat-icon>
+      Cambiar Perfil
+    </button>
+  </div>
+  <mat-menu #profileMenu="matMenu">
+    <button mat-menu-item routerLink="/reservas">
+      <mat-icon>travel_explore</mat-icon>
+      <span>Perfil Viajero (Reservas)</span>
+    </button>
+    <button mat-menu-item routerLink="/admin">
+      <mat-icon>admin_panel_settings</mat-icon>
+      <span>Perfil Agencia (Admin)</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
